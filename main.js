@@ -16,7 +16,7 @@ function adicionaLinha() {
     const inputTel = document.getElementById('tTel');
 
     if (contatos.includes(inputNome.value)) {
-        alert(`A atividade ${inputNome.value} já foi inserida`)
+        alert(`O contato ${inputNome.value} já foi inserida`)
     } else {
         contatos.push(inputNome.value);
         telefone.push(inputTel.value);
@@ -41,10 +41,8 @@ function atualizaTabela() {
 const inputTel = document.getElementById('tTel');
 
 inputTel.addEventListener('input', function(e) {
-    // Remove tudo que não seja número
     let tel = this.value.replace(/\D/g, '');
 
-    // Adiciona parênteses e traço
     if (tel.length > 0) {
         tel = '(' + tel;
     }
@@ -55,7 +53,6 @@ inputTel.addEventListener('input', function(e) {
         tel = tel.slice(0, 10) + '-' + tel.slice(10, 14);
     }
 
-    // Limita a quantidade de caracteres
     if (tel.length > 15) {
         tel = tel.slice(0, 15);
     }
